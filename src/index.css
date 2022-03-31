@@ -11,3 +11,99 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.pokeball {
+  position: relative;
+}
+
+.purple {
+  background-color: #6A0090;
+  width: 100vw;
+  height: 50vh;
+}
+
+.pinkCircle1, .pinkCircle2 {
+  height: 34.375rem;
+  position: absolute;
+  top: 0;
+  width: 34.375rem;
+  border-radius: 50%;
+  background-color: #BD0EA7;
+  box-sizing: border-box;
+  border: 0.188rem solid #000000;
+}
+
+.pinkCircle1 {
+  transform: translate(-50%, -50%);
+  left: 0;
+}
+
+.pinkCircle2 {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.blackStrip {
+  height: 3.7rem;
+  width: 100vw;
+  background-color: #333333;
+  box-sizing: border-box;
+  border: 0.188rem solid #000000;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.blackCircle, .whiteCircleBig, .whiteCircleSmall {
+  position: absolute;
+  box-sizing: border-box;
+  border: 0.188rem solid #000000;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.blackCircle {
+  background-color: #333333;
+  height: 18.75rem;
+  width: 18.75rem;
+}
+
+.whiteCircleBig {
+  background-color: white;
+  height: 11.75rem;
+  width: 11.75rem;
+}
+
+.whiteCircleSmall {
+  height: 7.5rem;
+  width: 7.5rem;
+}
+
+.lightCircle1, .lightCircle2 {
+  height: 13.75rem;
+  width: 13.75rem;
+  background-color: #D247C1;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+}
+
+.lightCircle1 {
+  transform: translate(-50%, -50%)
+}
+
+.lightCircle2 {
+  right: 0;
+  transform: translate(50%, -50%)
+}
+
+.bigLightCircle {
+  width: 51.563rem;
+  height: 26.125rem;
+  background-color: #9436B6;
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
