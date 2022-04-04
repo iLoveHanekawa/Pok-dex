@@ -124,6 +124,14 @@ code {
   mix-blend-mode: normal;
 }
 
+.wholeBlock {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  transform: translateX(100vw); 
+  opacity: 0%;
+}
+
 .blackBar {
   position: absolute;
   top: 10%;
@@ -135,6 +143,7 @@ code {
 
 .greyBar {
   position: absolute;
+  opacity: 0%;
   top: 10%;
   height: 2.5rem;
   width: 100vw;

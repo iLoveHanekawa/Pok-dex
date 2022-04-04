@@ -26,6 +26,6 @@ export default function Home(props) {
             <div className = "lightCircle1"></div>
             <div className = "lightCircle2"></div>
         </div>}
-        {props.isOpen && <List/>}
+        {props.isOpen && <List isOpen = {props.isOpen}/>}
     </div>
 }
