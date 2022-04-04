@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 code {
@@ -107,3 +108,37 @@ code {
   left: 50%;
   transform: translate(-50%, -50%)
 }
+
+.listUi {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+.orangeBlock {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(110deg, white 0%, white 49.93%, #F84E1A 50%, #F84E1A 60%,#F4693E 60%, #F4693E 100%);
+  mix-blend-mode: normal;
+}
+
+.blackBar {
+  position: absolute;
+  top: 10%;
+  height: 2.5rem;
+  width: 100vw;
+  background-image: linear-gradient(110deg, black 0%, black 100%);
+  mix-blend-mode:color-burn;
+}
+
+.greyBar {
+  position: absolute;
+  top: 10%;
+  height: 2.5rem;
+  width: 100vw;
+  background-color: lightgrey;
+  mix-blend-mode: darken;
+}
+
