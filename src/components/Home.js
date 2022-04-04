@@ -4,17 +4,20 @@ import List from "./List"
 
 export default function Home(props) {
 
-    const pokeball = React.useRef()
-    const moveUp = () => {
-        pokeball.current.style.transform = "translateY(-50vh)"
-        pokeball.current.style.opacity = "0%"
-        pokeball.current.style.transition = "all 0.15s ease-in"
-        props.setIsOpen(i => !i)
-        console.log(props.isOpen)
+    const moveUp = ({target}) => {
+        const pokeball = target.offsetParent;
+
+        pokeball.style.transform = "translateY(-50vh)"
+        pokeball.style.opacity = "0"
+        pokeball.style.transition = "all 0.5s ease-in"
+
+        setTimeout(() => {
+            props.setIsOpen(!props.isOpen);
+        },500);
     }
 
     return <div className = "homeUi">
-        {!props.isOpen && <div className = "pokeball" ref = {pokeball}>
+        {!props.isOpen && <div className = "pokeball">
             <div className = "purple"></div>
             <div className = "bigLightCircle"></div>
             <div className = "pinkCircle1"></div>
@@ -22,7 +25,7 @@ export default function Home(props) {
             <div className = "blackStrip"></div>
             <div className = "blackCircle"></div>
             <div className = "whiteCircleBig"></div>
-            <div className = "whiteCircleSmall" onClick = {moveUp}></div>
+            <div className = "whiteCircleSmall" onClick = {(event) => moveUp(event)}></div>
             <div className = "lightCircle1"></div>
             <div className = "lightCircle2"></div>
         </div>}

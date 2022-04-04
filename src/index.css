@@ -128,8 +128,7 @@ code {
   position: absolute;
   width: 100vw;
   height: 100vh;
-  transform: translateX(100vw); 
-  opacity: 0%;
+  animation: moveInLeft 0.5s ease-in;
 }
 
 .blackBar {
@@ -151,3 +150,20 @@ code {
   mix-blend-mode: darken;
 }
 
+
+@keyframes moveInLeft {
+  0% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(50vw);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
