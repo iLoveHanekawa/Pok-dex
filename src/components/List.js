@@ -3,6 +3,8 @@ import React from "react";
 export default function List() {
 
     const [updateStyle, setUpdateStyle] = React.useState(false)
+    const arr = []
+    for(let i = 0; i < 200; i++) arr.push(i)
 
     const wholeBlockStyle = !updateStyle? {
         position: "absolute",
@@ -48,8 +50,20 @@ export default function List() {
 
     return <div className = "listUi" >
         <div className = "wholeBlock" style = {wholeBlockStyle}>
-            <div className = "orangeBlock"></div>
+            <div className = "orangeBlock">
+            </div>
             <div className = "blackBar"></div>
+            <ul style = {{
+                display: "flex",    
+                flexDirection: "column",
+                position: "absolute",
+                top: "0",
+                width: "97.5vw",
+                height: "100vh",
+                overflow: "scroll"
+                }}>
+                {arr.map(i => (<li>{i}</li>))}
+            </ul>
         </div>
         <div className = "greyBar" style ={greyBarStyle}></div>
     </div>

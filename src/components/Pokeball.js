@@ -5,7 +5,7 @@ function Pokeball(props) {
     const [updateStyle, setUpdateStyle] = React.useState(false)
 
     const ballStyle = !updateStyle? {
-        position: "relative"
+        position: "relative",
     }: {
         position: "relative",
         transform: "translateY(-50vh)",
