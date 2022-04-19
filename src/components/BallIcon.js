@@ -1,18 +1,22 @@
 import React from 'react'
 
-function BallIcon() {
+function BallIcon(props) {
+
+    const white = props.color == "white"? "white": "black"
+    const black = props.color == "white"? "black": "#F4693E"
+    const green = "green"
 
     const styles = {
         height: "1.25rem",
         width: "1.25rem",
-        backgroundColor: "white",
+        backgroundColor: white,
         borderRadius: "99999rem",
         position: "relative"
     }
     return (
         <div style = {styles}>
             <div style = {{
-                backgroundColor: "black",
+                backgroundColor: black,
                 width: "1.25rem",
                 height: "0.15rem",
                 position: "absolute",
@@ -24,12 +28,12 @@ function BallIcon() {
                 height: "0.75rem",
                 boxSizing: "border-box",
                 borderRadius: "99999rem",
-                backgroundColor: "white",
+                backgroundColor: white,
                 position: "absolute",
                 transform: "translate(-50%, -50%)",
                 top: "50%",
                 left: "50%",
-                border: "0.15rem solid black"
+                border: `0.15rem solid ${black}`
             }}></div>
         </div>
     )

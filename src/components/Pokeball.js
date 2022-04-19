@@ -13,8 +13,6 @@ function Pokeball(props) {
         transition: "all 0.15s ease-in"
     }
 
-    console.log(ballStyle)
-
     React.useEffect(() => {
         if(updateStyle) {
             setTimeout(() => {

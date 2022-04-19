@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
@@ -131,4 +131,12 @@ code {
   mix-blend-mode:color-burn;
 }
 
+::-webkit-scrollbar {
+  background-color: #333333;
+  width: 0.7rem;
+}
 
+::-webkit-scrollbar-thumb {
+  background: #F84E1A;
+  height: 1.7rem;
+}

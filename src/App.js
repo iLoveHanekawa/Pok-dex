@@ -2,13 +2,13 @@ import React from "react"
 import { Route, Routes } from "react-router-dom"
 import NoMatch from "./components/NoMatch"
 import Home from "./components/Home"
-import DexButton from "./components/DexButton"
+import Loading from "./components/Loading"
 
 export default function App() {
     const [isOpen, setIsOpen] = React.useState(false)
-    return <div style = {{height: "50vh", width: "50vw"}}>
+    return <div>
         <Routes>
-            <Route path = '/' element = {<DexButton isOpen = {isOpen} setIsOpen = {setIsOpen}/>} />
+            <Route path = '/' element = {<Home isOpen = {isOpen} setIsOpen = {setIsOpen}/>} />
             <Route path = '*' element = {<NoMatch />}/>
         </Routes>
     </div>
