@@ -25,16 +25,28 @@ export default function DexButton(props) {
         paddingLeft: "7rem",
         paddingRight: "1rem"
     }
+    const fixedName = props.name[0].toUpperCase() + props.name.slice(1, props.name.length)
 
     return <div onMouseEnter = {async () => {
         props.setSelect(props.name)
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${props.name}`)
-        const data = await response.json()
-        props.setPreview(data.sprites.other['official-artwork'].front_default)
+        if(!(props.name in props.allImages)) {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${props.name}`)
+            const data = await response.json()
+            props.setPreview(data.sprites.other['official-artwork'].front_default)
+            props.setAllImages(i => {
+                return {
+                    ...i,
+                    [props.name]: data.sprites.other['official-artwork'].front_default
+                }
+            })
+        }
+        else {
+            props.setPreview(props.allImages[props.name])
+        }
     }} style = {buttonStyles}>
         {props.index + 1}
         <div style = {titleFlexStyles}>
-            <div>{props.name}</div>
+            <div>{fixedName}</div>
             <BallIcon color = {props.select == props.name? "white": "black"}/>
         </div>
     </div>

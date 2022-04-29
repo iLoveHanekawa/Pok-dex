@@ -8,6 +8,7 @@ export default function List() {
     const [dexList, setDexList] = React.useState([])
     const [preview, setPreview] = React.useState(some_img)
     const [select, setSelect] = React.useState("none")
+    const [allImages, setAllImages] = React.useState({})
 
     React.useEffect(() => {
         const fetchRequest = async () => {
@@ -41,7 +42,6 @@ export default function List() {
         height: '2.5rem',
         width: '100vw',
         backgroundColor: 'lightgrey',
-        mixBlendMode: 'darken',
     }: {
         position: 'absolute',
         opacity: "100%",
@@ -60,12 +60,22 @@ export default function List() {
     }, [])
 
     return <div className = "listUi" >
+        <div className = "greyBar" style ={greyBarStyle}></div>
         <div className = "wholeBlock" style = {wholeBlockStyle}>
             <div className = "orangeBlock">
+                <div style = {
+                    {
+                        position: "absolute",
+                        left: "50%",
+                        transform: "translate(-50%)",
+                        backgroundColor: "#F4693E",
+                        height: "100vh",
+                        width: "70vw"
+                    }
+                }></div>
+                <div className = "blackBar"></div>
             </div>
-            <div className = "blackBar"></div>
         </div>
-        <div className = "greyBar" style ={greyBarStyle}></div>
         <ul style = {{
             display: "flex",  
             listStyle: "none",  
@@ -77,11 +87,11 @@ export default function List() {
             position: "absolute",
             top: "18%",
             width: "97.5vw",
-            height: "100vh",
+            height: "79vh",
             overflow: "scroll",
             width: "30rem"
             }}>
-            {dexList.map((i, index) => (<li key = {index}><DexButton select = {select} setSelect = {setSelect} setPreview = {setPreview} index = {index} name = {i.name} /></li>))}
+            {dexList.map((i, index) => (<li key = {index}><DexButton allImages = {allImages} setAllImages = {setAllImages} select = {select} setSelect = {setSelect} setPreview = {setPreview} index = {index} name = {i.name} /></li>))}
         </ul>
         <div>
             <img style = {
@@ -92,6 +102,9 @@ export default function List() {
                     left: "6.2%"
                 }
             } src = {preview}/>
+        </div>
+        <div>
+            
         </div>
     </div>
 }

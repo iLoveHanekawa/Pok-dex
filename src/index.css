@@ -111,15 +111,18 @@ code {
   position: relative;
   height: 100vh;
   width: 100vw;
+  display: flex;
 }
 
-.orangeBlock {
+.orangeBlock { 
   position: absolute;
-  top: 0;
+  width: 99vw;
+  left: 35%;
+  transform: skew(160deg);
+  transform-origin: bottom left;
   height: 100vh;
-  width: 100vw;
-  background-image: linear-gradient(110deg, white 0%, white 49.93%, #F84E1A 50%, #F84E1A 60%,#F4693E 60%, #F4693E 100%);
-  mix-blend-mode: normal;
+  background-color: #F84E1A;
+  overflow: hidden;
 }
 
 .blackBar {
@@ -127,7 +130,10 @@ code {
   top: 10%;
   height: 2.5rem;
   width: 100vw;
-  background-image: linear-gradient(110deg, black 0%, black 100%);
+  right: 0;
+  background-color: #000000;
+  transform-origin: bottom left;
+
   mix-blend-mode:color-burn;
 }
 
