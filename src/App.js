@@ -4,6 +4,8 @@ import NoMatch from "./components/NoMatch"
 import Home from "./components/Home"
 import Loading from "./components/Loading"
 import Type from "./components/Type"
+import Info from "./components/Info"
+import SearchBar from "./components/SearchBar"
 
 export default function App() {
     const [isOpen, setIsOpen] = React.useState(false)

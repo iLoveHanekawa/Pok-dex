@@ -3,7 +3,11 @@ import BallIcon from "./BallIcon";
 import some_image from "../images/some_image.png"
 
 export default function DexButton(props) {
+    
 
+    const toggleDescription = () => {
+        props.setIsDescriptionVisible(i => !i)
+    }
     const buttonStyles = {
         width: "26.375rem",
         height: "2.625rem",
@@ -25,13 +29,40 @@ export default function DexButton(props) {
         paddingLeft: "7rem",
         paddingRight: "1rem"
     }
+
     const fixedName = props.name[0].toUpperCase() + props.name.slice(1, props.name.length)
 
-    return <div onMouseEnter = {async () => {
+    return <div onClick={toggleDescription} onMouseEnter = {async () => {
+        
         props.setSelect(props.name)
         if(!(props.name in props.allImages)) {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${props.name}`)
+            const response2 = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${props.name}`)
+            const data2 = await response2.json()
             const data = await response.json()
+            props.setDescription(i => {
+                return {
+                    ...i,
+                    [props.name]: {
+                        id: data.id,
+                        name: data.species.name,
+                        height: data.height,
+                        weight: data.weight,
+                        description: data2.flavor_text_entries[0].flavor_text,
+                        type1: data.types[0].type.name,
+                        type2: data.length > 1? data.types[1].type.name: "none"
+                    }
+                }
+            })
+            props.setPreviewDescription({
+                id: data.id,
+                name: data.species.name,
+                height: data.height,
+                weight: data.weight,
+                description: data2.flavor_text_entries[0].flavor_text,
+                type1: data.types[0].type.name,
+                type2: data.types.length > 1? data.types[1].type.name: "none"
+            })
             props.setPreview(data.sprites.other['official-artwork'].front_default)
             props.setAllImages(i => {
                 return {
@@ -42,6 +73,7 @@ export default function DexButton(props) {
         }
         else {
             props.setPreview(props.allImages[props.name])
+            props.setPreviewDescription(props.description[props.name])
         }
     }} style = {buttonStyles}>
         {props.index + 1}

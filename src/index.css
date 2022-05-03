@@ -118,6 +118,7 @@ code {
   position: absolute;
   width: 99vw;
   left: 35%;
+  /* left: -9%; */
   transform: skew(160deg);
   transform-origin: bottom left;
   height: 100vh;
@@ -130,11 +131,10 @@ code {
   top: 10%;
   height: 2.5rem;
   width: 100vw;
+  align-content: center;
+  display: flex;
   right: 0;
-  background-color: #000000;
-  transform-origin: bottom left;
-
-  mix-blend-mode:color-burn;
+  background-color: #333333;
 }
 
 ::-webkit-scrollbar {
@@ -145,4 +145,44 @@ code {
 ::-webkit-scrollbar-thumb {
   background: #F84E1A;
   height: 1.7rem;
+}
+
+.infoBox {
+  width: 40vw;
+  height: 2.3rem;
+  border: 0.05rem solid #C0C0C0;
+  display: flex;
+}
+
+.greyInfoBox {
+  width: 30vw;
+  height: 2.3rem;
+  background-color: lightgrey;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+}
+
+.whiteInfoBox {
+  width: 30vw;
+  height: 2.3rem;
+  justify-content: center;
+  gap: 1rem;
+  background-color: white;
+  align-items: center;
+  display: flex;
+}
+
+.infoDescription {
+  width: 37.593vw;
+  height: fit-content;
+  margin-top: 0.10rem;
+  border: 0.05rem solid transparent;
+  display: flex;
+  background-color: white;
+  padding-left: 2%;
+  padding-right: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
