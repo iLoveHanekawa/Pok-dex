@@ -77,7 +77,17 @@ export default function List(props) {
 
     return <div className = "listUi" >
         <div className = "greyBar" style ={greyBarStyle}>
-            <SearchBar suggestions = {suggestions}/>
+            <SearchBar 
+                setIsDescriptionVisible = {setIsDescriptionVisible} 
+                suggestions = {suggestions}
+                allImages = {allImages}
+                setDescription = {setDescription}
+                setPreview = {setPreview}
+                setPreviewDescription = {setPreviewDescription}
+                setSelect = {setSelect}
+                setAllImages = {setAllImages}    
+                description = {description}
+            />
         </div>
         <div className = "wholeBlock" style = {wholeBlockStyle}>
             <div className = "orangeBlock">
